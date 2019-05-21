@@ -1,0 +1,59 @@
+<head>
+   <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+   <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
+   <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
+ </head>
+
+ <body>
+   <div class="container" id="container">
+     <a-scene
+       vr-mode-ui="enabled: false"
+       fog="type: exponential; density: 0.0; color: #EFF2E4"
+     >
+       <a-assets>
+         <a-mixin
+           id="transition"
+           animation="property: position; easing: easeInOutCubic; dur:7000; dir: alternate; loop: true; delay: 50"
+         ></a-mixin>
+       </a-assets>
+
+       <a-light
+         type="ambient"
+         color="#F2DC9B"
+         position="0 0 0"
+         intensity="0.3"
+       ></a-light>
+       <a-light
+         type="point"
+         color="white"
+         position="0 10 10"
+         intensity="0.3"
+       ></a-light>
+       <a-light
+         type="point"
+         color="white"
+         position="0 1 1"
+         intensity="0.7"
+       ></a-light>
+
+       <a-entity mixin="transition" animation="to: 0 0 0">
+         <a-ocean
+                  position="0 -0.1 0"
+                  color="#A3B4BF"
+         ></a-ocean>
+       </a-entity>
+       <a-entity mixin="transition" animation="to: 0 0 0">
+         <a-ocean
+           position="0 0.2 0"
+           rotation="90 0 0"
+           color="#FF00FF"
+         ></a-ocean>
+       </a-entity>
+
+
+       <a-camera position="0 0 0" wasd-controls-enabled="false"></a-camera>
+       <a-sky color="#EFF2E4"></a-sky>
+     </a-scene>
+   </div>
+ </body>javascript:void(0)
